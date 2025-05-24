@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from "react";
-import { useMotionValue, animate, useMotionTemplate, motion } from 'framer-motion';
+import { useMotionValue, useMotionTemplate, motion } from 'framer-motion';
 import { FiArrowRight } from "react-icons/fi";
 
 export default function Contact() {
