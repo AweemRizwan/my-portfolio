@@ -7,7 +7,6 @@ import fiverr from "@/assets/fiverr.png";
 import elementor from "@/assets/elementor.png";
 import logitech from "@/assets/logitech.png";
 import oracle from "@/assets/oracle.png";
-import { div } from "framer-motion/client";
 
 const images = [
   { src: udemy, alt: "Udemy" },

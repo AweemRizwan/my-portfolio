@@ -1,12 +1,10 @@
 "use client"
-import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import project1 from '@/public/proj_1.png'
 import Solarsystem from '@/public/Solarsystem.png'
 import project2 from '@/assets/proj_2.png'
 // import project3 from '@/assets/proj_3.png'
 import Link from 'next/link'
-import { div, select } from 'framer-motion/client'
 
 const projects = [
   {id: 1, name: 'Project 1', title:'i-Notebook', image: project1, link: 'https://i-notebook-mbbnt4o8q-aweemrizwans-projects.vercel.app/signup'},

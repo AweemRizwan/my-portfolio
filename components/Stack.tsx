@@ -1,4 +1,3 @@
-import { section } from 'framer-motion/client'
 import React from 'react'
 import { FaReact } from 'react-icons/fa'
 import { IoLogoNodejs } from 'react-icons/io'
@@ -22,7 +21,7 @@ export const Stack = () => {
             </div>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2'>
                 {StackItems.map((item) => {
-                    const Icon = item.icon
+                    // const Icon = item.icon
                     return (
                         <div key={item.id} className='flex flex-col items-center justify-center p-4 rounded-xl'>
                             <div className='mb-4 bg-white/10 p-6 roumded-xl '>
