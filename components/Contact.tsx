@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from "react";
-import { useMotionValue, animate, useMotionTemplate, motion} from 'framer-motion';
+import { useMotionValue, animate, useMotionTemplate, motion } from 'framer-motion';
 import { FiArrowRight } from "react-icons/fi";
 
 export default function Contact() {
@@ -11,21 +11,24 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e) => {
+  // ✅ Typed input & textarea change event
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // ✅ Typed form submit event
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle sending logic here (e.g., Formspree, EmailJS, backend API)
     console.log("Form submitted:", formData);
     alert("Message sent!");
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
-  const COLORS_TOP = ["#13FFAA", "#FFA500", "#FF6347", "#FF4500", "#FF0000"]
-        const color = useMotionValue(COLORS_TOP[0])
-      const border = useMotionTemplate`1px solid ${color}`
-      const boxShadow = useMotionTemplate`0px 4px 24px ${color}`
+
+  // Framer Motion animation setup
+  const COLORS_TOP = ["#13FFAA", "#FFA500", "#FF6347", "#FF4500", "#FF0000"];
+  const color = useMotionValue(COLORS_TOP[0]);
+  const border = useMotionTemplate`1px solid ${color}`;
+  const boxShadow = useMotionTemplate`0px 4px 24px ${color}`;
 
   return (
     <section id="contact" className="bg-white dark:bg-gray-900 py-12 px-6">
@@ -66,28 +69,21 @@ export default function Contact() {
           <textarea
             name="message"
             placeholder="Your Message"
-            rows="5"
+            rows={5}
             value={formData.message}
             onChange={handleChange}
             required
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
           />
           <motion.button
-                    style={ {
-                        border, 
-                        boxShadow 
-                    } }
-                    whileHover={{ 
-                        scale: 1.015 
-                    }}
-                    whileTap={{ 
-                        scale: 0.985
-                    }}
-                    className='flex w-fit items-center gap-2 rounded-full px-4 py-2'
-                >
-                    Submit Response 
-                    <FiArrowRight />
-                </motion.button>
+            style={{ border, boxShadow }}
+            whileHover={{ scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            className="flex w-fit items-center gap-2 rounded-full px-4 py-2 text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+            type="submit"
+          >
+            Submit Response <FiArrowRight />
+          </motion.button>
         </form>
       </div>
     </section>
